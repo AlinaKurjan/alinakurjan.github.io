@@ -1,0 +1,103 @@
+---
+import Internship from "./Internship.astro";
+import Heading from "../ui/Heading.astro";
+
+const INTERNSHIPS = [
+  {
+    title: "Pericyte Chondrogenic Differentiation",
+    institution: "University of Glasgow",
+    supervisor: "Prof Matthew Dalby, Dr Hannah Donnelly",
+    date: "Sept – Dec 2019",
+    description: "Investigated the potential of using a PEA-FN-TGF-β scaffold system for chondrogenic differentiation of human pericytes isolated from microtia patient ear biopsies. Published in <a href='https://doi.org/10.1016/j.bioadv.2023.213370' target='_blank' class='text-pink-500 hover:text-purple-500 dark:text-purple-400 dark:hover:text-pink-400 underline'>Donnelly H., Kurjan A., et al. (2023) Biomater. Adv.</a>",
+    techniques: [
+      "Cell Culture",
+      "Western Blot",
+      "RT-qPCR",
+      "Flow Cytometry",
+      "Microscopy",
+      "ImageJ",
+      "FIJI",
+      "Prism"
+    ],
+    image: {
+      url: "/images/internships/pericyte.webp",
+      alt: "Pericyte chondrogenic differentiation research"
+    }
+  },
+  {
+    title: "Immune Cell Characterisation",
+    institution: "AstraZeneca, Cambridge",
+    supervisor: "Dr Larissa Carnevalli, Dr Jon Travers, Dr Anisha Solanki",
+    date: "Sept 2018 – Aug 2019",
+    description: "Developed and optimised an ex vivo assay for characterisation of drug effects on tumour antigen-specific T cells in three immune mouse syngeneic models – CT26, 4T1, and MC38. Tested and optimised techniques for MDSC and T cell isolations from mouse spleens and tumours.",
+    techniques: [
+      "FACS",
+      "Cell Isolation",
+      "Flow Cytometry",
+      "Cell Culture",
+      "Immunostaining",
+      "FlowJo",
+      "Prism"
+    ],
+    image: {
+      url: "/images/internships/immune.webp",
+      alt: "Immune cell characterisation research"
+    }
+  },
+  {
+    title: "JAK/STAT and Insulin Signalling in Cancer Cachexia",
+    institution: "Wolfson Wohl Cancer Research Centre, Glasgow",
+    supervisor: "Prof Julia Cordero, Dr Philippe Parvy",
+    date: "May – Aug 2018",
+    description: "Generated a cachectic tumour-bearing larval model with continuous overexpression of the Ras oncogene. Analysed the effects of Stat and/or Domeless knockdown on cachectic larval tumour volumes, tumour cell death, and the extent of muscle wasting.",
+    techniques: [
+      "Drosophila",
+      "Confocal Microscopy",
+      "RT-qPCR",
+      "Immunostaining",
+      "ZEN",
+      "FIJI",
+      "Volocity",
+      "Prism"
+    ],
+    image: {
+      url: "/images/internships/jakstat.webp",
+      alt: "JAK/STAT signalling research"
+    }
+  },
+  {
+    title: "Defensins and TNF in Drosophila Immunity",
+    institution: "Cancer Research UK Beatson Institute, Glasgow",
+    supervisor: "Prof Julia Cordero, Dr Philippe Parvy",
+    date: "July – Sept 2017",
+    description: "Investigated anti-tumoural properties of defensin peptides by generating constructs with knockdown of Toll or Imd pathways in dlg;def double mutants and quantifying def gene expression, tumour volumes, and rates of cell death. Published in <a href='https://doi.org/10.7554/eLife.45061' target='_blank' class='text-pink-500 hover:text-purple-500 dark:text-purple-400 dark:hover:text-pink-400 underline'>Parvy J.P., Yu Y., Dostalova A., et al. (2019) eLife</a>.",
+    techniques: [
+      "Drosophila Genetics",
+      "Microscopy",
+      "Gene Expression",
+      "Immunostaining",
+      "Image Analysis"
+    ],
+    image: {
+      url: "/images/internships/defensin.webp",
+      alt: "Defensins research in Drosophila"
+    }
+  }
+];
+---
+
+<section
+  id="internships"
+  class="mx-auto max-w-7xl scroll-m-20 px-8 py-8 max-sm:px-4"
+  aria-label="Research internships"
+>
+  <slot name="header" />
+  <slot name="description" />
+  <div class="mt-10 grid gap-8 md:grid-cols-2">
+    {
+      INTERNSHIPS.map((internship) => (
+        <Internship {...internship} />
+      ))
+    }
+  </div>
+</section>

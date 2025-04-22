@@ -1,0 +1,90 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Heading from "../components/ui/Heading.astro";
+
+const pageTitle = "Publications | Dr Alina Kurjan";
+const description = "Scientific publications and research contributions by Dr Alina Kurjan in computational biology and biomedical research.";
+const ogimage = {
+  url: "/images/iconic.webp",
+  alt: "Photo of Dr Alina Kurjan",
+};
+
+const publications = [
+  {
+    title: "Exploring cellular changes in ruptured human quadriceps tendons at single-cell resolution",
+    authors: "Mimpen J. Y., Baldwin M. J., Paul C., Ramos-Mucci L., Kurjan A., Cohen C. J., Sharma S., Chevalier Florquin M. S. N., Hulley P. A., McMaster J., Titchener A., Martin A., Costa M. L., Gwilym S. E., Cribbs A. P., Snelling S. J. B.",
+    journal: "The Journal of Physiology",
+    year: "2025",
+    doi: "10.1113/JP287812",
+    url: "https://doi.org/10.1113/JP287812"
+  },
+  {
+    title: "Single nucleus and spatial transcriptomic profiling of healthy human hamstring tendon",
+    authors: "Mimpen J. Y., Ramos-Mucci L., Paul C., Kurjan A., Hulley P., Ikwuanusi C., Gwilym S., Baldwin M.J., Cribbs A.P., Snelling S.J.B.",
+    journal: "FASEB Journal",
+    year: "2024",
+    doi: "10.1096/fj.202300601RRR",
+    url: "https://doi.org/10.1096/fj.202300601RRR"
+  },
+  {
+    title: "Fibronectin Matrix Assembly and TGFβ1 Presentation for Chondrogenesis of Patient Derived Pericytes for Microtia Repair",
+    authors: "Donnelly H., Kurjan A., Yong L. Y., Xiao Y., Lemgruber L., West C., Salmeron-Sanchez M., Dalby M. J.",
+    journal: "Biomaterials Advances",
+    year: "2023",
+    doi: "10.1016/j.bioadv.2023.213370",
+    url: "https://doi.org/10.1016/j.bioadv.2023.213370"
+  },
+  {
+    title: "The prognostic utility of pre-treatment neutrophil-to-lymphocyte-ratio (NLR) in colorectal cancer: A systematic review and meta-analysis",
+    authors: "Kurjan A, Naszai M, Maughan TS.",
+    journal: "Cancer Medicine",
+    year: "2021",
+    doi: "10.1002/cam4.4143",
+    url: "https://doi.org/10.1002/cam4.4143"
+  },
+  {
+    title: "The antimicrobial peptide Defensin cooperates with Tumour Necrosis Factor to drive tumour cell death in Drosophila",
+    authors: "Parvy J.P., Yu Y., Dostalova A., Kondo S., Kurjan A., Bulet P., Lemaitre B., Vidal M., Cordero J.B.",
+    journal: "eLife",
+    year: "2019",
+    doi: "10.7554/eLife.45061",
+    url: "https://doi.org/10.7554/eLife.45061"
+  }
+];
+---
+
+<Layout pageTitle={pageTitle} description={description} ogimage={ogimage}>
+  <main class="mx-auto max-w-5xl px-8 py-16">
+    <div class="flex items-center gap-4 justify-center mb-12">
+      <span class="text-3xl">📚</span>
+      <Heading text="Publications" level={1} />
+    </div>
+
+    <div class="space-y-8">
+      {publications.map((pub) => (
+        <article class="p-6 rounded-2xl bg-gradient-to-br from-pink-50/50 to-purple-200/10 dark:from-zinc-800 dark:to-purple-800/10 hover:shadow-[0_10px_20px_rgba(219,112,147,0.1)] dark:hover:shadow-[0_10px_20px_rgba(168,85,247,0.1)] transition-all duration-300">
+          <h2 class="text-xl font-bold text-pink-500 dark:text-purple-400 mb-3">
+            <a href={pub.url} target="_blank" class="hover:text-purple-500 dark:hover:text-pink-400">
+              {pub.title}
+            </a>
+          </h2>
+          <p class="text-zinc-700 dark:text-zinc-300 mb-2 text-sm" set:html={pub.authors.replace(/Kurjan A/g, '<strong>Kurjan A</strong>')}>
+          </p>
+          <div class="flex gap-3 text-sm text-zinc-600 dark:text-zinc-400">
+            <span>{pub.journal}</span>
+            <span>•</span>
+            <span>{pub.year}</span>
+            <span>•</span>
+            <a 
+              href={pub.url} 
+              target="_blank"
+              class="text-pink-500 hover:text-purple-500 dark:text-purple-400 dark:hover:text-pink-400 underline"
+            >
+              DOI: {pub.doi}
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </main>
+</Layout>

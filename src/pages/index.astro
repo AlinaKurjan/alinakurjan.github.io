@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Experience from "../components/portfolio/Experience.astro";
+import HeroIndex from "../components/portfolio/HeroIndex.astro";
+import Contact from "../components/portfolio/Contact.astro";
+import ListInternships from "../components/portfolio/ListInternships.astro";
+import { Icon } from "astro-icon/components";
+const pageTitle = "Dr Alina Kurjan | Computational Scientist";
+const description = "Dr Alina Kurjan - Computational and molecular biologist specializing in multi-modal sequencing data analysis and pipeline development.";
+const ogimage = {
+  url: "/images/iconic.webp",
+  alt: "Photo of Dr Alina Kurjan, Computational Scientist",
+};
+import Heading from "../components/ui/Heading.astro";
+---
+
+<Layout pageTitle={pageTitle} description={description} ogimage={ogimage}>
+  <HeroIndex />
+
+  <section
+    class="py-8 px-8 max-md:py-4 mb-4 scroll-m-16"
+    id="experience"
+  >
+    <div class="flex flex-col pt-8 max-w-4xl mx-auto">
+      <div class="flex gap-4 items-center justify-center">
+        <Icon class="text-3xl text-pink-500 dark:text-purple-400" name="briefcase" />
+        <Heading text="Work" textGradient="Experience" level={2}/>
+      </div>
+
+      <Experience />
+    </div>
+  </section>
+
+  <section
+    class="bg-gradient-to-t dark:from-[#0e0e10] from-[#fff] from-50% to-transparent to-100% scroll-m-16"
+    id="internships"
+  >
+    <ListInternships>
+      <div slot="header" class="flex gap-4 items-center justify-center text-center">
+        <span class="text-3xl">🔬</span>
+        <Heading text="Research" textGradient="Internships" level={2}/>
+      </div>
+      <p slot="description"
+        class="z-2 text-center mx-auto text-lg max-xl:text-base max-w-2xl dark:text-gray-200 text-blacktext my-6 leading-6 font-medium"
+      >
+        My journey through <b
+          class="bg-gradient-to-r from-pink-500 to-purple-500 dark:from-pink-300 dark:to-purple-200 text-transparent bg-clip-text"
+          >research internships</b
+        >
+        <br /> has shaped my passion for and expertise in <b
+          class="bg-gradient-to-r from-pink-500 to-purple-500 dark:from-pink-300 dark:to-purple-200 text-transparent bg-clip-text"
+          >cell biology and computational analysis</b
+        >.
+      </p>
+    </ListInternships>
+  </section>
+
+
+</Layout>

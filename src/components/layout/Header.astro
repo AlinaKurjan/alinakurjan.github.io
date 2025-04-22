@@ -1,0 +1,59 @@
+---
+import Navigation from "./Navigation.astro";
+import ThemeIcon from "../ui/ThemeIcon.astro";
+import Social from "../ui/Social.astro";
+import { Icon } from "astro-icon/components";
+
+const currentPath = Astro.url.pathname;
+const routes = ["/", "/about-me", "/publications"]; 
+
+const github = "https://github.com/AlinaKurjan";
+const linkedin = "https://www.linkedin.com/in/alinakurjan/";
+
+// Check if the current route is in the list of routes
+const isActiveRoute = routes.includes(currentPath);
+
+const navItems = isActiveRoute 
+  ? ["home", "experience", "internships", "publications", "about"]
+  : ["home", "about"]; 
+
+---
+
+<header
+  role="banner"
+  aria-label="Main navigation"
+  class="sticky top-0 z-50 w-full p-4 font-medium text-blacktext dark:text-zinc-300 dark:bg-[#0E0E11]/80 dark:border-b-1 dark:border-zinc-800 bg-white/90 backdrop-blur-xs dark:backdrop-blur-xs max-md:z-50 max-md:px-0 transition-all"
+>
+  <div
+    class="relative mx-auto flex max-w-7xl flex-row items-center justify-between max-xl:px-6"
+  >
+    <a href="/" class="flex items-center gap-2 group" aria-label="Go to home">
+      <span class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent group-hover:from-purple-500 group-hover:to-pink-500 transition-all">AK</span>
+      <span class="text-3xl group-hover:rotate-12 transition-transform">🪼</span>
+    </a>
+
+    <Navigation items={navItems} />
+
+    <div class="flex items-center justify-between gap-5 text-xl">
+      <div class="max-md:hidden flex items-center justify-center gap-5" role="list">
+        <Social link={github} iconName="github" />
+        <Social
+          link={linkedin}
+          iconName="linkedin"
+        />
+      </div>
+    </div>
+    <div class="flex items-center gap-5 text-xl md:pl-5">
+      <ThemeIcon />
+      <button 
+        class="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <Icon name="bars" class="hamburger-icon bars-icon" aria-hidden="true" />
+        <Icon name="xmark" class="hamburger-icon xmark-icon" aria-hidden="true" />
+      </button>
+    </div>
+  </div>
+</header>

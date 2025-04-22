@@ -1,0 +1,41 @@
+---
+const { title, institution, supervisor, date, image, description, techniques = [], size = "xs" } = Astro.props;
+
+import InternshipTag from "./InternshipTag.astro";
+---
+
+<article class="group h-full gap-4 p-6 flex flex-col justify-start transition-all duration-300 ease-in-out rounded-3xl bg-gradient-to-br from-pink-50/50 to-purple-200/10 dark:from-zinc-800 dark:to-purple-800/10 hover:shadow-[0_10px_20px_rgba(219,112,147,0.1)] dark:hover:shadow-[0_10px_20px_rgba(168,85,247,0.1)]">
+
+  <div class="flex flex-col p-2">
+    <div class="flex flex-col gap-3 w-full">
+      <div class="flex flex-col gap-1">
+        <h2 class="text-2xl font-bold text-pink-500 dark:text-purple-400">
+          {title}
+        </h2>
+        <h3 class="text-xl font-semibold text-zinc-700 dark:text-zinc-200">
+          {institution}
+        </h3>
+        <div class="flex flex-col">
+          <span class="text-base text-zinc-600 dark:text-zinc-300">
+            {supervisor}
+          </span>
+          <time class="text-sm text-zinc-500 dark:text-zinc-400">
+            {date}
+          </time>
+        </div>
+      </div>
+
+      {Array.isArray(techniques) && techniques.length > 0 && (
+        <div class="flex flex-wrap gap-2">
+          {techniques.map((technique: string) => (
+            technique && typeof technique === 'string' && (
+              <InternshipTag tag={technique} />
+            )
+          ))}
+        </div>
+      )}
+
+      <p class="text-base w-full leading-6 text-zinc-600 dark:text-zinc-300" set:html={description} />
+    </div>
+  </div>
+</article>

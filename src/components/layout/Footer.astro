@@ -1,0 +1,32 @@
+---
+import Social from "../ui/Social.astro";
+import { Icon } from "astro-icon/components";
+
+const name = "EFEELE";
+const email = "hello@efeele.dev";
+const github = "https://github.com/EFEELE";
+const linkedin = "https://www.linkedin.com/in/efeele/";
+const instagram = "https://www.instagram.com/efeele.dev/";
+const youtube = "https://www.youtube.com/@efeeledev";
+---
+
+<footer
+  class="relative bottom-0 w-full px-4 py-8 font-medium text-blacktext dark:bg-transparent dark:border-b-2 dark:border-zinc-800 dark:text-zinc-300 max-lg:mt-3"
+  role="contentinfo"
+  aria-label="Site footer"
+>
+  <nav
+    class="mx-auto flex max-w-7xl flex-row items-center justify-between gap-4 text-xl max-xl:px-6 max-sm:flex-col"
+    aria-label="Footer navigation"
+  >
+    <div
+      class="relative h-6 cursor-pointer before:absolute before:left-1/2 before:top-1/2 before:h-full before:w-[40%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-[#eab7f725] before:blur-3xl before:opacity-80 before:-z-1 hover:text-pink-500 transition-all italic"
+    >
+      <a href="/" aria-label="Return to homepage">
+        <span class="text-xl font-bold italic bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">AK</span>
+      </a>
+    </div>
+
+
+  </nav>
+</footer>

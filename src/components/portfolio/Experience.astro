@@ -1,0 +1,59 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "Nov 2024 - Present (Part-time)",
+    title: "Computational Scientist II",
+    company: "Entelo Bio",
+    description:
+      "Leading the development of modular computational biology pipelines for short and long-read RNA-sequencing data analysis across different organisms and modalities.",
+  },
+  {
+    date: "Nov 2024 - Present (Part-time)",
+    title: "Postdoctoral Research Associate",
+    company: "NDORMS, University of Oxford",
+    description:
+      "Leading the analysis of single-nucleus and spatial RNA-sequencing human developing and aged musculoskeletal datasets for the <a href='https://data.humancellatlas.org/hca-bio-networks/musculoskeletal' target='_blank' class='text-pink-500 hover:text-purple-500 dark:text-purple-400 dark:hover:text-pink-400 underline'>Human Cell Atlas</a> network. Published in <a href='https://doi.org/10.1096/fj.202300601RRR' target='_blank' class='text-pink-500 hover:text-purple-500 dark:text-purple-400 dark:hover:text-pink-400 underline'>Mimpen J. Y., et al. (2024) FASEB J.</a> and <a href='https://doi.org/10.1113/JP287812' target='_blank' class='text-pink-500 hover:text-purple-500 dark:text-purple-400 dark:hover:text-pink-400 underline'>Mimpen J. Y., Baldwin M. J., et al. (2025) J. Physiol.</a>.",
+  },
+  {
+    date: "Dec 2023 - Present (Seasonal)",
+    title: "Bioinformatics Teaching Fellow",
+    company: "MRC WIMM, University of Oxford",
+    description:
+      "Developed the 'Python for Single-cell Analysis' module for the OBDS Training Programme, delivering lectures in the theoretical background as well as advanced coding tutorials for multi-sample end-to-end data analysis. Topics include sequence alignment, quality control, data correction and integration, normalisation, dimensionality reduction, clustering, and annotation.",
+  },
+  {
+    date: "Oct 2020 - Oct 2024",
+    title: "DPhil in Molecular and Cellular Medicine",
+    company: "NDORMS, University of Oxford",
+    description:
+      "Investigated the cellular and extracellular matrix biology defining human embryonic, foetal and aged tendons using single-nucleus and spatial RNA-sequencing techniques, imaging, and computational biology. Uncovered cell types and pathways relevant for the design of biomaterials capable of guiding diseased/aged tendon tissue repair towards a self-regenerative phenotype.",
+    supervisors: [
+      "Assoc Prof Sarah Snelling",
+      "Dr Mathew Baldwin",
+      "Assoc Prof Adam Cribbs",
+      "Prof Christopher Buckley"
+    ]
+  },
+];
+
+---
+
+<div class="relative max-md:mt-0 mt-8" aria-label="Professional experience">
+  <ol class="relative mt-10">
+    {
+      EXPERIENCE.map((experience, index) => (
+        <li class="">
+          <article role="article" aria-labelledby={`experience-title-${index}`}>
+            <div
+              class="flex flex-col gap-2 text-zinc-600 dark:text-zinc-300 md:col-span-3"
+              aria-describedby={`experience-title-${index}`}
+            >
+              <ExperienceItem {...experience} />
+            </div>
+          </article>
+        </li>
+      ))
+    }
+  </ol>
+</div>

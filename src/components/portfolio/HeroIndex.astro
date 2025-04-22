@@ -1,0 +1,126 @@
+---
+import Button from "../ui/Button.astro";
+import Heading from "../ui/Heading.astro";
+import Tools from "../portfolio/Tools.astro";
+import { Icon } from "astro-icon/components";
+import Hobbies from "../portfolio/Hobbies.astro";
+
+
+const  {
+  profileImage = "/images/iconic3.webp",
+  profileAlt = "Photo of Dr Alina Kurjan",
+  profileLink = "/about-me",
+  profileTitle = "Computational Scientist",
+  profileName = "Dr Alina Kurjan",
+  githubLink = "https://github.com/AlinaKurjan",
+  githubText = "Check out my GitHub",
+  portfolioImage = "/images/portfolio.webp",
+  email = "alina@entelo.bio",
+} = Astro.props;
+---
+
+<section
+  class="scroll-m-16 px-8 max-sm:px-4 py-8"
+  id="home"
+  aria-label="Professional profile and introduction"
+>
+  <div
+    class="mx-auto mb-4 w-full max-w-7xl rounded-2xl bg-gradient-to-r from-pink-300 dark:from-purple-600 to-purple-50 dark:to-pink-200/5 hover:to-pink-300/30 dark:hover:to-purple-600/30 p-[.2rem]"
+  >
+    <div
+      class="group relative z-0 flex flex-col lg:flex-row items-stretch justify-center gap-16 overflow-hidden rounded-2xl bg-gradient-to-tr from-pink-100 to-white p-4 transition-all hover:shadow-[0_10px_50px_rgba(219,_112,_147,_0.2)] dark:bg-gradient-to-r dark:from-purple-950 dark:to-zinc-950 dark:overflow-hidden max-md:w-full max-md:gap-6 max-lg:gap-8 dark:before:[background-image:radial-gradient(circle,_rgba(219,112,147)_0,_rgba(75,0,130)_100%)] before:[background-image:radial-gradient(circle,_rgba(255,182,193)_0,_rgba(221,160,221)_100%)] before:absolute before:left-65 before:top-10 before:h-[40%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-80 before:transition hover:before:animate-pulse"
+    >
+      <div class="flex-shrink-0 max-w-[250px] w-full flex items-center justify-center">
+        <div class="relative w-full">
+
+        <div
+          class="group-hover:scale-105 relative z-10 flex w-full cursor-pointer items-center overflow-hidden rounded-full p-[2px] transition-all duration-500 bg-gradient-to-r from-pink-400 to-purple-400"
+        >
+          <div
+            class="absolute inset-0 h-full w-full rounded-full bg-gradient-to-r from-pink-300 to-purple-300 animate-pulse opacity-75"
+          >
+          </div>
+          <div class="relative z-20 flex w-full rounded-full overflow-hidden">
+            <img
+              src={profileImage}
+              alt={profileAlt}
+              class="w-full h-auto rounded-full border-4 border-pink-300 dark:border-purple-400"
+              style="object-fit:contain;"
+            />
+            <a
+              href={profileLink}
+              class="absolute inset-0"
+              aria-label="View about me page"></a>
+        </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="flex h-full w-7/12 flex-col justify-center gap-4 p-4 max-md:w-full max-md:gap-2"
+      >
+        {/* Available for work section - uncomment when needed
+        <span
+          class="relative inline-flex items-center text-xs font-semibold leading-0 dark:text-white text-blacktext max-md:font-medium max-sm:justify-center"
+        >
+          <span
+            class="before:mr-2 before:block before:h-1.5 before:w-1.5 before:rounded-full before:bg-pink-400 before:shadow-[0px_0px_0px_3px_rgba(219,_112,_147,_0.5)] before:animate-pulse before:content-['']"
+          ></span>
+          Available for work
+        </span>
+        */}
+
+        <h1
+          class="text-4xl font-black leading-none text-blacktext dark:text-white max-xl:text-3xl max-lg:text-2xl max-sm:text-center"
+        >
+          {profileName} 🪼
+        </h1>
+        <p
+          class="mb-0 text-lg font-semibold leading-8 text-blacktext dark:text-gray-200 max-xl:text-base"
+        >
+          <span
+            class="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text font-black text-transparent dark:from-pink-300 dark:to-purple-200"
+            >Computational and molecular biologist</span
+          > with a DPhil from Oxford, specialising in multi-modal sequencing data analysis and pipeline development. Bringing <span
+            class="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text font-black text-transparent dark:from-pink-300 dark:to-purple-200"
+            >strong academic and industry experience</span> - including roles at AstraZeneca, Entelo Bio, and in OBDS bioinformatics teaching - combined with an entrepreneurial mindset.
+        </p>
+
+        <div class="mt-8 flex items-center gap-4 max-md:mt-4">
+          <Button
+            text="Contact me"
+            href="#contact"
+            style="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 dark:from-pink-400 dark:to-purple-400 dark:hover:from-pink-500 dark:hover:to-purple-500"
+          />
+          <Button
+            link={profileLink}
+            text="About Me"
+            iconName="person"
+            variant="dark"
+          />
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-4 max-md:flex-col mt-10">
+          <div class="flex-1 min-w-[250px] rounded-2xl bg-gradient-to-r from-pink-300 dark:from-purple-600 to-purple-50 dark:to-pink-200/5 p-[.2rem] transition-all duration-150 ease-in hover:scale-105 hover:shadow-[0_10px_50px_rgba(219,_112,_147,_0.2)]">
+            <div class="flex flex-col items-center justify-center min-h-[220px] w-full h-full rounded-2xl bg-gradient-to-tr from-pink-100 to-white dark:bg-gradient-to-r dark:from-purple-950 dark:to-zinc-950 dark:overflow-hidden">
+              <div class="flex items-center mb-4 justify-center">
+                <Heading text="Tech Stack" level={3} />
+              </div>
+              <Tools />
+            </div>
+          </div>
+          <div class="flex-1 min-w-[250px] rounded-2xl bg-gradient-to-r from-pink-300 dark:from-purple-600 to-purple-50 dark:to-pink-200/5 p-[.2rem] transition-all duration-150 ease-in hover:scale-105 hover:shadow-[0_10px_50px_rgba(219,_112,_147,_0.2)]">
+            <div class="flex flex-col items-center justify-center min-h-[220px] w-full h-full rounded-2xl bg-gradient-to-tr from-pink-100 to-white dark:bg-gradient-to-r dark:from-purple-950 dark:to-zinc-950 dark:overflow-hidden">
+              <div class="flex items-center mb-4 justify-center">
+                <Heading text="Beyond the Code" level={3} />
+              </div>
+              <div class="overflow-y-auto w-full">
+                <Hobbies />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
