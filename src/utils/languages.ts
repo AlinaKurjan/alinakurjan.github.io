@@ -5,54 +5,54 @@ export interface Language {
 }
 
 export const languages: Record<string, Language> = {
-  python: {
-    name: "Python",
-    iconName: "python",
+  bash: {
+    name: "Bash",
+    iconName: "Bash_light",
+  },
+  atlassian: {
+    name: "Atlassian",
+    iconName: "atlassian",
+  },
+  homebrew: {
+    name: "Homebrew",
+    iconName: "homebrew",
+  },
+  illustrator: {
+    name: "Illustrator",
+    iconName: "illustrator",
+  },
+  indesign: {
+    name: "InDesign",
+    iconName: "indesign",
+  },
+  linux: {
+    name: "Linux",
+    iconName: "linux",
+  },
+  tensorflow: {
+    name: "TensorFlow",
+    iconName: "tensorflow",
   },
   r: {
     name: "R",
-    iconName: "astro", // Use 'r-lang' (Simple Icons) or fallback if not available
+    iconName: "R_light", // Use 'r-lang' (Simple Icons) or fallback if not available
+  },
+  docker: {
+    name: "Dask",
+    iconName: "Dask Logo-Icon-Primary",
   },
   docker: {
     name: "Docker",
-    iconName: "astro",
+    iconName: "docker",
   },
   aws: {
     name: "AWS",
-    iconName: "astro",
-  },
-  hpc: {
-    name: "HPC",
-    iconName: "astro", // fallback to a server icon
-  },
-  gpu: {
-    name: "GPU",
-    iconName: "astro", // fallback to a gpu icon if available
-  },
-  jax: {
-    name: "JAX",
-    iconName: "astro", // fallback: use 'python' or a generic icon if not available
-  },
-  "scvi-tools": {
-    name: "scvi-tools",
-    iconName: "astro", // fallback: use 'tools' icon
-  },
-  scverse: {
-    name: "scverse",
-    iconName: "astro", // fallback: use 'toolbox' icon
-  },
-  angular: {
-    name: "Angular",
-    iconName: "angular",
+    iconName: "Amazon Web Services",
   },
   astro: {
     name: "Astro",
     iconName: "astro",
-  },
-  bootstrap: {
-    name: "Bootstrap",
-    iconName: "bootstrap",
-  },
+  }
   cloudflare: {
     name: "Cloudflare",
     iconName: "cloudflare",
@@ -113,6 +113,10 @@ export const languages: Record<string, Language> = {
   git: {
     name: "Git",
     iconName: "git",
+  },
+  github: {
+    name: "GitHub",
+    iconName: "GitHub_light",
   },
   css: {
     name: "CSS",
