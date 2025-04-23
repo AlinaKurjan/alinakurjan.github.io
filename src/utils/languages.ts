@@ -7,7 +7,7 @@ export interface Language {
 export const languages: Record<string, Language> = {
   bash: {
     name: "Bash",
-    iconName: "Bash_light",
+    iconName: "Bash_dark",
   },
   atlassian: {
     name: "Atlassian",
@@ -35,9 +35,9 @@ export const languages: Record<string, Language> = {
   },
   r: {
     name: "R",
-    iconName: "R_light", // Use 'r-lang' (Simple Icons) or fallback if not available
+    iconName: "R_dark",
   },
-  docker: {
+  dask: {
     name: "Dask",
     iconName: "Dask Logo-Icon-Primary",
   },
@@ -47,12 +47,12 @@ export const languages: Record<string, Language> = {
   },
   aws: {
     name: "AWS",
-    iconName: "Amazon Web Services",
+    iconName: "Amazon Web Services_dark",
   },
   astro: {
     name: "Astro",
     iconName: "astro",
-  }
+  },
   cloudflare: {
     name: "Cloudflare",
     iconName: "cloudflare",
@@ -116,7 +116,7 @@ export const languages: Record<string, Language> = {
   },
   github: {
     name: "GitHub",
-    iconName: "GitHub_light",
+    iconName: "GitHub_dark",
   },
   css: {
     name: "CSS",

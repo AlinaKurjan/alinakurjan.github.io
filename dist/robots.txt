@@ -1,0 +1,7 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://alinakurjan.github.io/sitemap-index.xml
+
+
