@@ -74,6 +74,10 @@ export const languages: Record<string, Language> = {
     className: "!bg-[#f6ece1]",
     iconName: "mysql",
   },
+  sqlite: {
+    name: "SQLite",
+    iconName: "sqlite",
+  },
   wordpress: {
     name: "Wordpress",
     iconName: "wordpress",
