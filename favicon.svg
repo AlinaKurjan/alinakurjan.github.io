@@ -1,0 +1,24 @@
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Black background -->
+  <rect width="64" height="64" fill="#000000"/>
+  
+  <!-- Cyan glow effect -->
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- AK text in Aptos-style font (using Arial as fallback) -->
+  <text x="32" y="42" 
+        font-family="Aptos, Arial, sans-serif" 
+        font-size="32" 
+        font-weight="600"
+        fill="#00ffff" 
+        text-anchor="middle"
+        filter="url(#glow)">AK</text>
+</svg>

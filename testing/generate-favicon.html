@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator</title>
+</head>
+<body>
+    <h2>Generating Favicon...</h2>
+    <canvas id="canvas" width="64" height="64"></canvas>
+    <br>
+    <a id="download" download="favicon.png">Right-click and "Save Link As..." to download favicon.png</a>
+    
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Black background
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(0, 0, 64, 64);
+        
+        // Cyan glow effect (draw multiple times with increasing blur)
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = '#00ffff';
+        
+        // AK text
+        ctx.font = 'bold 32px Arial, sans-serif';
+        ctx.fillStyle = '#00ffff';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('AK', 32, 34);
+        
+        // Convert to data URL
+        const dataUrl = canvas.toDataURL('image/png');
+        document.getElementById('download').href = dataUrl;
+        
+        console.log('Favicon generated! Right-click the link to download.');
+    </script>
+</body>
+</html>
